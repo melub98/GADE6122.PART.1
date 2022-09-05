@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GADE6122.MelubuhleMduduziGulaNdebele.ST10093680
+namespace GADE6122.PART._1
 {
      abstract class Tile
         {
