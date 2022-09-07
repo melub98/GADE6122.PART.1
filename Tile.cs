@@ -19,10 +19,10 @@ namespace GADE6122.PART._1
             public enum TileType { Hero, Enemy, Gold, Weapon }//the public enum which defines type of tile
 
 
-            public Tile(int x, int y)//constructor that recieves and sets values
+            protected Tile(int ValX, int ValY)//constructor that recieves and sets values
             {
-                X = x;
-                Y = y;
+                X = ValX;
+                Y = ValY;
             }
 
 
@@ -47,12 +47,14 @@ namespace GADE6122.PART._1
 
                 }
             }
+        public TileType TileType0 { get; set; }
 
 
 
 
 
-        }
+
+    }
 
     }
 
