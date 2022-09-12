@@ -32,7 +32,7 @@ namespace GADE6122.PART._1
 
 
 
-            public class Obstacle : Tile //Obstace class for obstacles on the map 
+            public class Obstacle : Tile //dummy Obstace class for obstacles on the map 
             {
 
                 public Obstacle(int X, int Y) : base(X, Y)
@@ -40,7 +40,7 @@ namespace GADE6122.PART._1
 
                 }
             }
-            public class EmptyTile : Tile// EmptyTile class there just to donate an empty tile
+            public class EmptyTile : Tile// dummy EmptyTile class there just to donate an empty tile
             {
                 public EmptyTile(int X, int Y) : base(X, Y)
                 {

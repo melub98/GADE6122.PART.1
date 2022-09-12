@@ -20,41 +20,41 @@ namespace GADE6122.PART._1
         {
             if (direction == Character.Movement.Left)
             {
-                if (map.hero.GetX - 1 != 0 && map.hero.Vision[2] == null)
+                if (map.Hero0.GetX - 1 != 0 && map.Hero0.Vision[2] == null)
                 {
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = null;
-                    map.hero.Move(Character.Movement.Left);
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = map.hero;
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = null;
+                    map.Hero0.Move(Character.Movement.Left);
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = map.Hero0;
                     return true;
                 }
             }
             else if (direction == Character.Movement.Right)
             {
-                if (map.hero.GetX + 2 != map.height && map.hero.Vision[3] == null)
+                if (map.Hero0.GetX + 2 != map.Mapheight && map.Hero0.Vision[3] == null)
                 {
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = null;
-                    map.hero.Move(Character.Movement.Right);
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = map.hero;
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = null;
+                    map.Hero0.Move(Character.Movement.Right);
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = map.Hero0;
                     return true;
                 }
             }
             else if (direction == Character.Movement.Up)
             {
-                if (map.hero.GetY - 1 != 0 && map.hero.Vision[0] == null)
+                if (map.Hero0.GetY - 1 != 0 && map.Hero0.Vision[0] == null)
                 {
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = null;
-                    map.hero.Move(Character.Movement.Up);
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = map.hero;
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = null;
+                    map.Hero0.Move(Character.Movement.Up);
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = map.Hero0;
                     return true;
                 }
             }
             else
             {
-                if (map.hero.GetY + 2 != map.width && map.hero.Vision[1] == null)
+                if (map.Hero0.GetY + 2 != map.Mapwidth && map.Hero0.Vision[1] == null)
                 {
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = null;
-                    map.hero.Move(Character.Movement.Down);
-                    map.TileMapArray[map.hero.GetY, map.hero.GetX] = map.hero;
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = null;
+                    map.Hero0.Move(Character.Movement.Down);
+                    map.TileMapArray[map.Hero0.GetY, map.Hero0.GetX] = map.Hero0;
                     return true;
                 }
             }

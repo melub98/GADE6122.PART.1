@@ -15,35 +15,36 @@ namespace GADE6122.PART._1
 
         public override Movement ReturnMove(Movement move = Movement.NoMovement)
         {
-            int RndMove = RandomObj.Next(1, 5);
-
-
-            if (RndMove == 1)
+            
+            int RndMove = RandomObj.Next(0, Vision.Length);
+            while (Vision[RndMove].GetType() != typeof(EmptyTile))
             {
-                move = Movement.Up;
+                RndMove = RandomObj.Next(0, Vision.Length);
             }
 
-            if (RndMove == 2)
+
+            switch (RndMove)
             {
-                move = Movement.Down;
+
+                case 0:
+                    return Movement.Up;
+                case 1:
+                    return Movement.Down;
+                case 2:
+                    return Movement.Right;
+                case 3:
+                    return Movement.Left;
+                default:
+                    return Movement.NoMovement;
             }
 
-            if (RndMove == 3)
-            {
-                move = Movement.Right;
-            }
+            
 
-            if (RndMove == 4)
-            {
-                move = Movement.Left;
-            }
-
-            if (RndMove == 5)
-            {
-                move = Movement.NoMovement;
-            }
-
-            return move;
+            
+            
+            
+          
         }
+    
     }
 }

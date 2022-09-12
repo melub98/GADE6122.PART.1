@@ -31,10 +31,13 @@ namespace GADE6122.PART._1
             this.X = X;
             this.Y = Y;
             this.Symbol = Symbol;
+            GetMaxHP = MaxHP;
+            GetDamage = Damage;
+            GetHP = HP;
         }
         public virtual void Attack(Character Target)//method for attacking a player and decreasing the targets health
         {
-            this.Damage = -Target.HP;
+            Damage = -Target.HP;
         }
         public bool IsDead(int HP)//bool for checking if character is dead or alive
         {
@@ -51,7 +54,7 @@ namespace GADE6122.PART._1
         {
             if (DistanceTo(Target) <= 1 && DistanceTo(Target) >= -1)
             {
-                return true; //enenmy is cose range
+                return true; //enenmy is in close range
             }
             else
             {

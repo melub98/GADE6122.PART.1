@@ -21,7 +21,8 @@ namespace GADE6122.PART._1
         }
         public override string ToString()
         {
-            return ("Enemy at[" + X + "," + Y + "]" + Damage + "Amount DMG");
+            return GetType().Name + '\n' + "at[" + X + "," + Y + "]  \n " + HP + " HP \n"  + Damage + "Amount DMG";
+
         }
     }
 }

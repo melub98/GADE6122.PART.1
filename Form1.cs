@@ -35,7 +35,7 @@ namespace GADE6122.PART._1
                         }
                         else
                         {
-                            mapResult += $"{"G",padWidth}";
+                            mapResult += $"{"S",padWidth}";
                         }
                     }
                 }
@@ -47,7 +47,7 @@ namespace GADE6122.PART._1
 
         private void UpdateHeroStats()
         {
-            PlayerStats_lbl.Text = gameEngine.Map.hero.ToString();
+            PlayerStats_lbl.Text = gameEngine.Map.Hero0.ToString();
         }
 
         private void FrmGameView_Load(object sender, EventArgs e)
