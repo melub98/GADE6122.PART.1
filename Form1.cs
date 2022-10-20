@@ -8,10 +8,15 @@ namespace GADE6122.PART._1
         {
             InitializeComponent();
             gameEngine = new GameEngine(6, 8, 6, 8, 5);
-            updateMap();
+            UpdateMap();
         }
 
-        public void updateMap()
+        private void fillEnemyBox()
+        {
+           
+        }
+
+        public void UpdateMap()
         {
             string mapResult = "";
             const int padWidth = 5;
@@ -55,6 +60,8 @@ namespace GADE6122.PART._1
 
         }
 
+
+
         private void FrmGameView_KeyDown(object sender, KeyEventArgs e)
         {
             Console.WriteLine("moved");
@@ -87,21 +94,55 @@ namespace GADE6122.PART._1
                     gameEngine.Map.UpdateVision();
                 }
             }
-            updateMap();
+            UpdateMap();
         }
 
        
 
-        private Button MoveUP;
-        private Button MoveDown;
-        private Button MoveRight;
-        private Button MoveLeft;
-        private Button AttackRight;
-        private Button AttackDown;
-        private Button AttackUp;
-        private Button AttackLeft;
+        private Button btnMoveUP;
+        private Button btnMoveDown;
+        private Button btnMoveRight;
+        private Button btnMoveLeft;
+        private Button btnAttackUp;
         private Label MapLabel;
         private Label PlayerStats_lbl;
         private Label label1;
+
+        private void btnMoveUP_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Up);
+            gameEngine.Map.UpdateVision();
+            MapLabel.Text = gameEngine.ToString();
+            PlayerStats_lbl.Text = gameEngine.Map.Hero0.ToString();
+        }
+
+        private void btnMoveLeft_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Left);
+            gameEngine.Map.UpdateVision();
+            MapLabel.Text = gameEngine.ToString();
+            PlayerStats_lbl.Text = gameEngine.Map.Hero0.ToString();
+        }
+
+        private void btnMoveDown_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Down);
+            gameEngine.Map.UpdateVision();
+            MapLabel.Text = gameEngine.ToString();
+            PlayerStats_lbl.Text = gameEngine.Map.Hero0.ToString();
+        }
+
+        private void btnMoveRight_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Right);
+            gameEngine.Map.UpdateVision();
+            MapLabel.Text = gameEngine.ToString();
+            PlayerStats_lbl.Text = gameEngine.Map.Hero0.ToString();
+        }
+
+        private void btnAttack_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

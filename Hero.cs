@@ -8,11 +8,11 @@ namespace GADE6122.PART._1
 {
      class Hero : Character
     {
-        public Hero(int X, int Y, int HP, int MaxHP, int Damage, char Symbol) : base(X, Y, 'H')
+        public Hero(int X, int Y, int HP, int MaxHP, char Symbol) : base(X, Y, 'H')
         {
             this.HP = HP;
             this.MaxHP = MaxHP;
-            Damage = 2;
+           
         }
         public override Movement ReturnMove(Movement move)
         {

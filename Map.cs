@@ -48,7 +48,7 @@ namespace GADE6122.PART._1
             switch (type)
             {
                 case Tile.TileType.Hero:
-                    return new Hero(Mrandom.Next(1, Height - 1), Mrandom.Next(1, Width - 1), 40, 100, 2, 'H');
+                    return new Hero(Mrandom.Next(1, Height - 1), Mrandom.Next(1, Width - 1), 40, 100, 'H');
                 case Tile.TileType.Enemy:
                     int x, y;
                     x = Mrandom.Next(1, Width - 1);
@@ -58,7 +58,18 @@ namespace GADE6122.PART._1
                         x = Mrandom.Next(1, Width - 1);
                         y = Mrandom.Next(1, Height - 1);
                     }
-                    return new SwampCreature(x, y, 1, 10);
+                    return new Mage(x, y, 5, 5);
+                case Tile.TileType.Gold:
+                    int X, Y;
+                    X = Mrandom.Next(1, 5);
+                    Y = Mrandom.Next(1, 5);
+                    while (MapArray[X, Y] != null)
+                    {
+                        X = Mrandom.Next(1, 5);
+                        Y = Mrandom.Next(1, 5);
+                    }
+
+                    return new Gold(X,Y, '$');
             }
             return null;
         }
