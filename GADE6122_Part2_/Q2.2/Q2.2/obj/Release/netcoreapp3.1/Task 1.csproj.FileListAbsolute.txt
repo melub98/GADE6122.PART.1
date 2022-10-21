@@ -1,0 +1,6 @@
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Release\netcoreapp3.1\Task_1.frmUI.resources
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Release\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Release\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Release\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Release\netcoreapp3.1\Task 1.AssemblyInfo.cs
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Release\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache

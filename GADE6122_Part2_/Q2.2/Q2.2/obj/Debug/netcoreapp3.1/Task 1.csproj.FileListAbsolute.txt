@@ -1,0 +1,162 @@
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.csprojAssemblyReference.cache
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+D:\we work here\GADS_Task-2\Task 1\bin\Debug\netcoreapp3.1\Task 1.exe
+D:\we work here\GADS_Task-2\Task 1\bin\Debug\netcoreapp3.1\Task 1.deps.json
+D:\we work here\GADS_Task-2\Task 1\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+D:\we work here\GADS_Task-2\Task 1\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+D:\we work here\GADS_Task-2\Task 1\bin\Debug\netcoreapp3.1\Task 1.dll
+D:\we work here\GADS_Task-2\Task 1\bin\Debug\netcoreapp3.1\Task 1.pdb
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.dll
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.pdb
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+D:\we work here\GADS_Task-2\Task 1\obj\Debug\netcoreapp3.1\Task_1.PlayerUI.resources
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\bin\Debug\netcoreapp3.1\Task 1.exe
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\bin\Debug\netcoreapp3.1\Task 1.deps.json
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\bin\Debug\netcoreapp3.1\Task 1.dll
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\bin\Debug\netcoreapp3.1\Task 1.pdb
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.csprojAssemblyReference.cache
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task_1.PlayerUI.resources
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.dll
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.pdb
+C:\School work\1 UNIVERSITY\2nd Semester\GADE\correct\Task 2\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csprojAssemblyReference.cache
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task_1.Properties.Resources.resources
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\bin\Debug\netcoreapp3.1\Task 1.exe
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\bin\Debug\netcoreapp3.1\Task 1.deps.json
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\bin\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\bin\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\Olwethu\Documents\GitHub\GADS_Task-2\Task 2\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+C:\Users\ryank\Downloads\Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.exe
+C:\Users\ryank\Downloads\Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.deps.json
+C:\Users\ryank\Downloads\Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+C:\Users\ryank\Downloads\Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+C:\Users\ryank\Downloads\Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\ryank\Downloads\Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task_1.Properties.Resources.resources
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\ryank\Downloads\Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.exe
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.deps.json
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\bin\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task_1.Properties.Resources.resources
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\ryank\Downloads\Ryan_Kemp_GADE_Task_2\Task 2\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.dll
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.pdb
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\bin\Debug\netcoreapp3.1\Task 1.exe
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\bin\Debug\netcoreapp3.1\Task 1.deps.json
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\bin\Debug\netcoreapp3.1\Task 1.dll
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\bin\Debug\netcoreapp3.1\Task 1.pdb
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Game 2D\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.dll
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\obj\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.exe
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.deps.json
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.dll
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.pdb
+C:\Users\snowdrop\Desktop\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.exe
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.deps.json
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.dll
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.pdb
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.dll
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.pdb
+E:\Game dev year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.exe
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.deps.json
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.json
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.runtimeconfig.dev.json
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.dll
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\bin\Debug\netcoreapp3.1\Task 1.pdb
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.dll
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.pdb
+D:\Game Development and Design\year 1\Semester 2\GADE\Ryan_Kemp_20100423_GADE6122_POE\Ryan_Kemp_20100423_GADE6122_POE\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.genruntimeconfig.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.AssemblyReference.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task_1.frmUI.resources
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.GenerateResource.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfoInputs.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.AssemblyInfo.cs
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.csproj.CoreCompileInputs.cache
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.dll
+D:\Game Development and Design\year 1\Semester 2\GADE\GADE6122_Part2_\Q2.2\Q2.2\obj\Debug\netcoreapp3.1\Task 1.pdb
