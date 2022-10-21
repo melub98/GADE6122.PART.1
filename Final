@@ -1,0 +1,1504 @@
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Windows.Forms;
+using static Task_1.Character;
+using static Task_1.frmUI; 
+
+    
+    namespace Task_1 {
+
+    class GameEngine
+    {
+        private Map map;
+         public Map GetMap
+         {
+            get { return map; }
+            set { map = value; }
+         }
+
+        bool playerMoved = false;
+        bool playerAttacks = false;
+        
+        public GameEngine()
+        {
+            map = new Map(10, 10, 15, 15, 6,5);
+            
+            //MoveEnemy();
+            
+        }
+        
+        public void EnemyAttack()
+        {
+            for (int i = 1; i < map.GetEnemies.Length; i++)
+            {
+                switch (map.GetEnemies[i].getSymbol)
+                {
+                    case 'G':
+                        for (int a = 0; a < map.GetEnemies[i].Vision.Length; a++)
+                        {
+                            if (map.GetEnemies[i].Vision[a].getX == map.GetPlayer.getX && map.GetEnemies[i].Vision[a].getY == map.GetPlayer.getY)
+                            {
+                                map.GetEnemies[i].attack(map.GetPlayer);
+                            }
+                        }
+                    break;
+                        case 'M':
+                            if (map.GetEnemies[i].checkRange(map.GetPlayer) == true)
+                            {
+                                map.GetEnemies[i].attack(map.GetPlayer);
+                            }
+                            for (int b = 0; b < map.GetEnemies.Length; b++)
+                            {
+                                if (map.GetEnemies[i].checkRange(map.GetEnemies[b]) == true)
+                                {
+                                    map.GetEnemies[i].attack(map.GetEnemies[b]);
+                                }
+                            }
+                            break;
+                                case 'L':
+                                    for (int a = 0; a < map.GetEnemies[i].Vision.Length; a++)
+                                        {
+                                            if (map.GetEnemies[i].Vision[a].getX == map.GetPlayer.getX && map.GetEnemies[i].Vision[a].getY == map.GetPlayer.getY)
+                                                {
+                                                    map.GetEnemies[i].attack(map.GetPlayer);
+                                                }
+                                        }
+                                    break;
+                }
+            }
+        }
+
+        public void MovePlayer(MovementDirection movement)
+        {
+            switch (movement)
+            {
+                case MovementDirection.up:
+                    map.GetPlayer.Move(map.GetPlayer.ReturnMove(MovementDirection.up));
+                    break;
+
+                case MovementDirection.down:
+                    map.GetPlayer.Move(map.GetPlayer.ReturnMove(MovementDirection.down));
+                    break;
+
+                case MovementDirection.left:
+                    map.GetPlayer.Move(map.GetPlayer.ReturnMove(MovementDirection.left));
+                    break;
+
+                case MovementDirection.right:
+                    map.GetPlayer.Move(map.GetPlayer.ReturnMove(MovementDirection.right));
+                    break;
+            }
+           
+        }
+
+        public string PlayerAttack(int Enemy)
+        {
+            bool EnemyInRange = false;
+
+            foreach(Tile T in map.GetPlayer.Vision)
+            {
+                if(T.getX == map.GetEnemies[Enemy].getX && (T.getY == map.GetEnemies[Enemy].getY))
+                {
+                    EnemyInRange = true;
+                    break;
+                }
+            }
+             
+            if (EnemyInRange)
+            {
+                map.GetPlayer.attack(map.GetEnemies[Enemy]);
+                return "You did attack" + map.GetPlayer.getDamage + " damage to a " + map.GetEnemies[Enemy].GetTileType
+                +"they now have" + map.GetEnemies[Enemy].getHP + "HP";
+                //playerAttacks = true;
+            }
+            else
+            {
+                return "Target was not in range";
+            }
+        }        
+
+        public override string ToString()
+        {
+           return map.DrawMap();
+        }
+
+
+        //Enemy attacking
+        public string EnemyAttacks(int Character) {
+
+            return null;
+
+        }
+
+        //Enemy movement
+        public void MoveEnemy(MovementDirection moveEnem) 
+        {
+            for(int i = 0; i < map.GetEnemies.Length; i++)
+            {
+                map.GetEnemies[i].Move(map.GetEnemies[i].ReturnMove(moveEnem));
+            }
+
+            void save()
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+
+                FileStream fs = new FileStream("Save.dat", FileMode.Create, FileAccess.Write, FileShare.None);
+
+                try
+                {
+                    using (fs)
+                    {
+                        bf.Serialize(fs, map);
+                    }
+
+                }
+                catch (Exception map)
+                {
+
+                    //for (int a = 0; a < map.GetLeaders.Length; a++)
+                    //{
+                    //    map.GetEnemies[a].Move(map.GetLeaders[a].ReturnMove(moveEnem));
+                    //}
+
+                    /*
+                    if (playerMoved == true) {
+
+                        EnemyAttacks();
+                    }
+
+                    if (playerAttacks == true) {
+                        EnemyAttacks();
+
+                    }
+                    */
+                }
+
+
+        //bool CheckValidMove(MovementDirection charactermove) {
+        //    bool valid = false;
+
+        //    switch (charactermove) {
+        //        case MovementDirection.right:
+        //            if (Vision[2].GetType() == typeof(EmptyTile) || Vision[2].GetType() == typeof(Gold)) {
+        //                valid = true;
+        //                break;
+        //            }
+        //            break;
+        //        case MovementDirection.left:
+        //            if (Vision[3].GetType() == typeof(EmptyTile) || Vision[3].GetType() == typeof(Gold)) {
+        //                valid = true;
+        //                break;
+        //            }
+        //            break;
+        //        case MovementDirection.down:
+        //            if (Vision[1].GetType() == typeof(EmptyTile) || Vision[1].GetType() == typeof(Gold)) {
+        //                valid = true;
+        //                break;
+        //            }
+        //            break;
+        //        case MovementDirection.up:
+        //            if (Vision[0].GetType() == typeof(EmptyTile) || Vision[0].GetType() == typeof(Gold)) {
+        //                valid = true;
+        //                break;
+        //            }
+        //            break;
+        //    }
+        //    return valid;
+        //}
+
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    class Gold : Item   //Q2.2
+    {
+
+        private int amount;
+
+        public int GetAmount
+        {
+            get { return amount; }
+            set { amount = value; }
+        }
+
+        private Random rnd = new Random();
+
+        public Gold(int x, int y, TileType tileType) : base(x, y, tileType, '$')
+        {
+            amount = rnd.Next(1,6);
+        }
+
+        public override string ToString()
+        {
+            return "You have recieved " + amount + " gold";
+        }
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    class Hero: Character
+    {
+
+        public Hero(int x, int y, TileType tileType) : base(x, y, tileType, 'H', 100, 10, 2,0)
+        {
+
+        }
+
+        bool CheckValidMove(MovementDirection charactermove)
+        {
+            bool valid = false;
+
+            switch (charactermove)
+            {
+                case MovementDirection.right:
+                        if(Vision[2].GetType() == typeof(EmptyTile) || Vision[2].GetType() == typeof(Gold))
+                    {
+                        valid = true;
+                        break;
+                    }
+                    break;
+                case MovementDirection.left:
+                    if (Vision[3].GetType() == typeof(EmptyTile) || Vision[3].GetType() == typeof(Gold))
+                    {
+                        valid = true;
+                        break;
+                    }
+                    break;
+                case MovementDirection.down:
+                    if (Vision[1].GetType() == typeof(EmptyTile) || Vision[1].GetType() == typeof(Gold))
+                    {
+                        valid = true;
+                        break;
+                    }
+                    break;
+                case MovementDirection.up:
+                    if (Vision[0].GetType() == typeof(EmptyTile) || Vision[0].GetType() == typeof(Gold))
+                    {
+                        valid = true;
+                        break;
+                    }
+                    break;
+            }
+            return valid;
+        }
+        
+
+
+        public override MovementDirection ReturnMove(MovementDirection move = MovementDirection.idle)
+        {
+            if (CheckValidMove(move))
+            {
+                currentPosition = move;
+                return move;
+            }
+            else return MovementDirection.idle;
+        }
+
+        public override string ToString()
+        {
+            return "Player Stats:" + '\n' + "HP: " + HP + "/ "+ MaxHP+ '\n' + "Damage: " + Damage + '\n' + "[" + X + "," + Y + "] " + getPurse + " Gold";
+        }
+
+        MovementDirection currentPosition = MovementDirection.idle;
+
+        public MovementDirection getTargetCurrentPosition() {
+            return this.currentPosition;
+        }
+
+
+
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    abstract class Item : Tile
+    {
+        public Item(int x, int y, TileType tileType, char symbol) : base(x, y, tileType, symbol)
+        {
+
+        }
+
+        public abstract override string ToString();
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1    //Q2.2
+{
+    class Mage : Enemy 
+    {
+        public Mage(int x, int y, TileType tileType) : base(x, y, tileType, 'M', 5, 5, 5)
+        {
+
+        }
+
+       public override bool checkRange(Character Target)
+        {
+            if (Target.getX == X - 1 && Target.getY == Y - 1)
+            {
+                return true;
+            }
+
+            else if (Target.getX == X - 1 && Target.getY == Y + 1)
+            {
+                return true;
+            }
+
+            else if (Target.getX == X + 1 && Target.getY == Y - 1)
+            {
+                return true;
+            }
+
+            else if (Target.getX == X + 1 && Target.getY == Y + 1)
+            {
+                return true;
+            }
+
+            else if (Target.getX == X + 1 && Target.getY == Y)
+            {
+                return true;
+            }
+            else if (Target.getX == X - 1 && Target.getY == Y)
+            {
+                return true;
+            }
+            else if (Target.getX == X && Target.getY == Y + 1)
+            {
+                return true;
+            }
+            else if (Target.getX == X && Target.getY == Y - 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override MovementDirection ReturnMove(MovementDirection move = MovementDirection.idle)
+        {
+            return MovementDirection.idle;
+        }
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using static Task_1.Tile;
+
+namespace Task_1
+{
+    class Map
+    {
+        private Tile[,] map;
+        public Tile[,] GetMaps
+        {
+            get { return map; }
+            set { map = value; }
+        }
+
+        private Hero Player;
+        public Hero GetPlayer
+        {
+            get { return Player; }
+            set { Player = value; }
+        }
+
+        private Enemy[]  enemies;
+
+        public Enemy[] GetEnemies
+        {
+            get { return enemies; }
+            set { enemies = value; }
+        }
+
+        public Item [] items;
+
+        public  Item [] GetItems
+        {
+            get { return items; }
+            set { items = value; }
+        }
+
+        private int mapwidth;
+
+        public int getmapwidth
+        {
+            get { return mapwidth; }
+            set { mapwidth = value; }
+        }
+
+        private int mapheight;
+
+        public int getmapheight
+        {
+            get { return mapheight; }
+            set { mapheight = value; }
+        }
+        private Random rnd = new Random();
+
+        public Map(int min_width, int max_width, int min_height, int max_height, int num_enemies, int num_items)
+        {
+            mapwidth = rnd.Next(min_width, max_width+1);            //map width
+            mapheight = rnd.Next(min_height, max_height+1);         //map height
+            map = new Tile[mapwidth, mapheight];                    //map (width and height)
+
+            enemies = new Enemy[num_enemies];                       //enemies
+            items = new Item[num_items+4];                            //items
+
+
+            generate_map();                                         //creating empty tiles and border
+
+            Player = (Hero)Create(TileType.Hero);                   //creating hero (title type = hero)
+            map[Player.getX, Player.getY] = Player;                 //adding player to map
+
+            for (int i = 0; i < enemies.Length; i++)               
+            {
+                enemies[i] = (Enemy)Create(TileType.Enemy);         //create multiple enemies
+                map[enemies[i].getX, enemies[i].getY] = enemies[i]; //add multiple enemies to map
+            }   
+
+            for (int z = 0; z < items.Length; z++)                  
+            {
+                items[z] = (Item)Create(TileType.Gold);      
+                map[items[z].getX, items[z].getY] = items[z];       //add items(gold) to map
+            }
+            UpdateVision();
+        }
+
+        
+        public void UpdateGame()
+        {
+            generate_map();
+            
+            map[Player.getX, Player.getY] = Player;
+
+            RemoveDead();
+
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                map[enemies[i].getX, enemies[i].getY] = enemies[i];
+            }
+
+            AddGold();
+            for (int i = 0; i < items.Length; i++)
+            {
+                map[items[i].getX, items[i].getY] = items[i];
+            }
+            
+            UpdateVision();
+        }
+         void generate_map()                                    //creates the empty tiles
+        {
+            for (int y = 0; y < map.GetLength(1); y++)
+            {
+                for (int x = 0; x < map.GetLength(0); x++)
+                {
+                    map[x, y] = new EmptyTile(x, y, TileType.Empty);
+                }
+            }
+
+            for (int y = 0; y < map.GetLength(1); y++)          //Creates borders
+            {
+                for (int x = 0; x < map.GetLength(0); x++)
+                {
+                    if ((y == 0 || y == map.GetLength(1) - 1) || x == 0 || (x == map.GetLength(0) - 1))
+                    {
+                        map[x, y] = new Obstacle(x, y, TileType.Barrier);
+                    }
+                }
+            }
+        }
+
+        private void AddGold()
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                if(map[Player.getX, Player.getY] == map[items[i].getX, items[i].getY])
+                {
+                    Player.Pickup(GetItemAtPosition(Player.getX, Player.getY));
+                }
+            }
+
+        }
+
+
+        public Item GetItemAtPosition(int x, int y)
+        {
+            Item output = null;
+            for (int i = 0; i < items.Length; i++)
+            {
+                if(x == items[i].getX && y == items[i].getY && items[i].GetTileType == TileType.Gold)
+                {
+                    output = items[i];
+                    items[i] = null;
+                    items = items.Where(i => i != null).ToArray();
+                }
+            }
+            return output;
+        }
+        private Tile Create(TileType tileType,int x = 0, int y = 0)
+        {
+
+            switch (tileType)
+            {
+                case TileType.Hero:
+                    int HeroX = rnd.Next(0, mapwidth);
+                    int HeroY = rnd.Next(0, mapheight);
+                    while( map[HeroX,HeroY].GetType() != typeof(EmptyTile))
+                    {
+                         HeroX = rnd.Next(0, mapwidth);
+                         HeroY = rnd.Next(0, mapheight);
+                    }
+                    return new Hero(HeroX, HeroY, tileType);                    
+
+                case TileType.Gold:
+                    int ItemX = rnd.Next(0, mapwidth);
+                    int ItemY = rnd.Next(0, mapheight);
+
+                    while (map[ItemX, ItemY].GetType() != typeof(EmptyTile))
+                    {
+                        ItemX = rnd.Next(0, mapwidth);
+                        ItemY = rnd.Next(0, mapheight);
+                    }
+                    return new Gold(ItemX, ItemY, tileType);
+
+                case TileType.Enemy:
+                    int determine_enemy = rnd.Next(0, 3);
+                    int EnemyX = rnd.Next(0, mapwidth);
+                    int EnemyY = rnd.Next(0, mapheight);
+
+                    while (map[EnemyX, EnemyY].GetType() != typeof(EmptyTile))
+                    {
+                        EnemyX = rnd.Next(0, mapwidth);
+                        EnemyY = rnd.Next(0, mapheight);
+                    }
+                    if (determine_enemy == 0)
+                    {
+                        return new SwampCreature(EnemyX, EnemyY, tileType);
+                    }
+                    else if (determine_enemy == 1)
+                    {
+                        return new Mage(EnemyX, EnemyY, tileType);
+                    }
+
+                default:
+                    return null;
+            }
+        }
+
+        public void UpdateVision()
+        {
+            foreach(Enemy E in enemies)
+            {
+                E.Vision[0] = map[E.getX, E.getY - 1];
+                E.Vision[1] = map[E.getX, E.getY + 1];
+                E.Vision[2] = map[E.getX + 1, E.getY];
+                E.Vision[3] = map[E.getX - 1, E.getY];
+            }
+            Player.Vision[0] = map[Player.getX, Player.getY - 1];
+            Player.Vision[1] = map[Player.getX, Player.getY + 1];
+            Player.Vision[2] = map[Player.getX + 1, Player.getY];
+            Player.Vision[3] = map[Player.getX - 1, Player.getY];
+        }
+
+        public void RemoveDead()
+        {
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                if (enemies[i].isdead())
+                {
+                    enemies[i] = null;
+                    enemies = enemies.Where(i => i != null).ToArray();
+                }
+            }
+        }
+        public string DrawMap()
+        {
+            string output = "";
+            for (int y = 0; y < map.GetLength(1); y++)
+            {
+                for (int x = 0; x < map.GetLength(0); x++)
+                {
+                    output += map[x, y].getSymbol; 
+                }
+                output += '\n';
+            }
+            return output;
+        }   
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1    //Q2.1
+{ 
+    class Obstacle : Tile
+    {
+        public Obstacle(int x,int y, TileType tileType) : base(x, y, tileType, 'X')
+        {
+            
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using static Task_1.Character;
+
+namespace Task_1
+{
+    public partial class frmUI : Form
+    {
+        public frmUI()
+        {
+            InitializeComponent();
+
+            
+        }
+
+        GameEngine game = new GameEngine();
+     
+        private void PlayerUI_Load(object sender, EventArgs e)
+        {
+            lblMap.Text = game.ToString();
+            redStats.Text = game.GetMap.GetPlayer.ToString();
+            fillEnemyBox();
+            
+            //EnemycomboBox.Text = game.GetMap.GetEnemies[0];
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillEnemyBox()
+        {
+            EnemycomboBox.Items.Clear();
+            for (int i = 0; i < game.GetMap.GetEnemies.Length; i++)
+            {
+                EnemycomboBox.Items.Add(game.GetMap.GetEnemies[i]);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            game.MovePlayer(MovementDirection.up);
+            game.GetMap.UpdateGame();
+            game.MoveEnemy(MovementDirection.idle);
+            game.GetMap.UpdateGame();
+            game.EnemyAttack();
+            game.GetMap.UpdateGame();
+            lblMap.Text = game.ToString();
+            redStats.Text = game.GetMap.GetPlayer.ToString();
+        }
+
+        private void bttnDown_Click(object sender, EventArgs e)
+        {
+            game.MovePlayer(MovementDirection.down);
+            game.GetMap.UpdateGame();
+            game.MoveEnemy(MovementDirection.idle);
+            game.GetMap.UpdateGame();
+            game.EnemyAttack();
+            game.GetMap.UpdateGame();
+            lblMap.Text = game.ToString();
+            redStats.Text = game.GetMap.GetPlayer.ToString();
+        }
+
+        private void bttnRight_Click(object sender, EventArgs e)
+        {
+            game.MovePlayer(MovementDirection.right);
+            game.GetMap.UpdateGame();
+            game.MoveEnemy(MovementDirection.idle);
+            game.GetMap.UpdateGame();
+            game.EnemyAttack();
+            game.GetMap.UpdateGame();
+            lblMap.Text = game.ToString();
+            redStats.Text = game.GetMap.GetPlayer.ToString();
+        }
+
+        private void bttnLeft_Click(object sender, EventArgs e)
+        {
+            game.MovePlayer(MovementDirection.left);
+            game.GetMap.UpdateGame();
+            game.MoveEnemy(MovementDirection.idle);
+            game.GetMap.UpdateGame();
+            game.EnemyAttack();
+            game.GetMap.UpdateGame();
+            lblMap.Text = game.ToString();
+            redStats.Text = game.GetMap.GetPlayer.ToString();
+        }
+
+        private void bttnAttack_Click(object sender, EventArgs e)
+        {
+            game.GetMap.GetPlayer.attack(game.GetMap.GetEnemies[EnemycomboBox.SelectedIndex]);
+            fillEnemyBox();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e) 
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e) 
+        {
+
+        }
+    }
+}
+
+
+namespace Task_1
+{
+    partial class frmUI
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.bttnUp = new System.Windows.Forms.Button();
+            this.bttnRight = new System.Windows.Forms.Button();
+            this.bttnDown = new System.Windows.Forms.Button();
+            this.bttnLeft = new System.Windows.Forms.Button();
+            this.grpBxStats = new System.Windows.Forms.GroupBox();
+            this.redStats = new System.Windows.Forms.RichTextBox();
+            this.grpbxAttack = new System.Windows.Forms.GroupBox();
+            this.EnemycomboBox = new System.Windows.Forms.ComboBox();
+            this.bttnAttack = new System.Windows.Forms.Button();
+            this.redLog = new System.Windows.Forms.RichTextBox();
+            this.redEnemyStats = new System.Windows.Forms.RichTextBox();
+            this.lblMap = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.grpBxStats.SuspendLayout();
+            this.grpbxAttack.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // bttnUp
+            // 
+            this.bttnUp.BackColor = System.Drawing.Color.Silver;
+            this.bttnUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttnUp.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(36)))));
+            this.bttnUp.Location = new System.Drawing.Point(673, 144);
+            this.bttnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttnUp.Name = "bttnUp";
+            this.bttnUp.Size = new System.Drawing.Size(85, 36);
+            this.bttnUp.TabIndex = 0;
+            this.bttnUp.Text = "^";
+            this.bttnUp.UseVisualStyleBackColor = false;
+            this.bttnUp.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bttnRight
+            // 
+            this.bttnRight.BackColor = System.Drawing.Color.Silver;
+            this.bttnRight.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttnRight.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(36)))));
+            this.bttnRight.Location = new System.Drawing.Point(753, 184);
+            this.bttnRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttnRight.Name = "bttnRight";
+            this.bttnRight.Size = new System.Drawing.Size(85, 36);
+            this.bttnRight.TabIndex = 1;
+            this.bttnRight.Text = ">";
+            this.bttnRight.UseVisualStyleBackColor = false;
+            this.bttnRight.Click += new System.EventHandler(this.bttnRight_Click);
+            // 
+            // bttnDown
+            // 
+            this.bttnDown.BackColor = System.Drawing.Color.Silver;
+            this.bttnDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttnDown.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(36)))));
+            this.bttnDown.Location = new System.Drawing.Point(673, 225);
+            this.bttnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttnDown.Name = "bttnDown";
+            this.bttnDown.Size = new System.Drawing.Size(85, 36);
+            this.bttnDown.TabIndex = 2;
+            this.bttnDown.Text = "V";
+            this.bttnDown.UseVisualStyleBackColor = false;
+            this.bttnDown.Click += new System.EventHandler(this.bttnDown_Click);
+            // 
+            // bttnLeft
+            // 
+            this.bttnLeft.BackColor = System.Drawing.Color.Silver;
+            this.bttnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttnLeft.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(36)))));
+            this.bttnLeft.Location = new System.Drawing.Point(594, 184);
+            this.bttnLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttnLeft.Name = "bttnLeft";
+            this.bttnLeft.Size = new System.Drawing.Size(85, 36);
+            this.bttnLeft.TabIndex = 3;
+            this.bttnLeft.Text = "<";
+            this.bttnLeft.UseVisualStyleBackColor = false;
+            this.bttnLeft.Click += new System.EventHandler(this.bttnLeft_Click);
+            // 
+            // grpBxStats
+            // 
+            this.grpBxStats.BackColor = System.Drawing.Color.White;
+            this.grpBxStats.Controls.Add(this.redStats);
+            this.grpBxStats.Location = new System.Drawing.Point(299, 29);
+            this.grpBxStats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpBxStats.Name = "grpBxStats";
+            this.grpBxStats.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpBxStats.Size = new System.Drawing.Size(273, 97);
+            this.grpBxStats.TabIndex = 4;
+            this.grpBxStats.TabStop = false;
+            this.grpBxStats.Text = "Stats";
+            // 
+            // redStats
+            // 
+            this.redStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.redStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.redStats.Location = new System.Drawing.Point(10, 20);
+            this.redStats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.redStats.Name = "redStats";
+            this.redStats.Size = new System.Drawing.Size(253, 68);
+            this.redStats.TabIndex = 1;
+            this.redStats.Text = "";
+            // 
+            // grpbxAttack
+            // 
+            this.grpbxAttack.BackColor = System.Drawing.Color.White;
+            this.grpbxAttack.Controls.Add(this.EnemycomboBox);
+            this.grpbxAttack.Controls.Add(this.bttnAttack);
+            this.grpbxAttack.Controls.Add(this.redLog);
+            this.grpbxAttack.Controls.Add(this.redEnemyStats);
+            this.grpbxAttack.Location = new System.Drawing.Point(299, 158);
+            this.grpbxAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpbxAttack.Name = "grpbxAttack";
+            this.grpbxAttack.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpbxAttack.Size = new System.Drawing.Size(273, 184);
+            this.grpbxAttack.TabIndex = 0;
+            this.grpbxAttack.TabStop = false;
+            this.grpbxAttack.Text = "Attack";
+            // 
+            // EnemycomboBox
+            // 
+            this.EnemycomboBox.FormattingEnabled = true;
+            this.EnemycomboBox.Location = new System.Drawing.Point(5, 20);
+            this.EnemycomboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EnemycomboBox.Name = "EnemycomboBox";
+            this.EnemycomboBox.Size = new System.Drawing.Size(263, 23);
+            this.EnemycomboBox.TabIndex = 5;
+            this.EnemycomboBox.Text = "--Select Enemy--";
+            // 
+            // bttnAttack
+            // 
+            this.bttnAttack.BackColor = System.Drawing.Color.Silver;
+            this.bttnAttack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttnAttack.ForeColor = System.Drawing.SystemColors.Window;
+            this.bttnAttack.Location = new System.Drawing.Point(5, 97);
+            this.bttnAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttnAttack.Name = "bttnAttack";
+            this.bttnAttack.Size = new System.Drawing.Size(262, 22);
+            this.bttnAttack.TabIndex = 4;
+            this.bttnAttack.Text = "ATTACK";
+            this.bttnAttack.UseVisualStyleBackColor = false;
+            this.bttnAttack.Click += new System.EventHandler(this.bttnAttack_Click);
+            // 
+            // redLog
+            // 
+            this.redLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.redLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.redLog.Location = new System.Drawing.Point(5, 123);
+            this.redLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.redLog.Name = "redLog";
+            this.redLog.Size = new System.Drawing.Size(263, 58);
+            this.redLog.TabIndex = 3;
+            this.redLog.Text = "";
+            // 
+            // redEnemyStats
+            // 
+            this.redEnemyStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.redEnemyStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.redEnemyStats.Location = new System.Drawing.Point(5, 44);
+            this.redEnemyStats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.redEnemyStats.Name = "redEnemyStats";
+            this.redEnemyStats.Size = new System.Drawing.Size(263, 49);
+            this.redEnemyStats.TabIndex = 2;
+            this.redEnemyStats.Text = "";
+            // 
+            // lblMap
+            // 
+            this.lblMap.AutoSize = true;
+            this.lblMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMap.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMap.Location = new System.Drawing.Point(38, 29);
+            this.lblMap.Name = "lblMap";
+            this.lblMap.Size = new System.Drawing.Size(122, 23);
+            this.lblMap.TabIndex = 5;
+            this.lblMap.Text = "XXXXXXXXXX";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Silver;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.Location = new System.Drawing.Point(661, 306);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(107, 37);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(673, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Shop";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // frmUI
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(849, 374);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.lblMap);
+            this.Controls.Add(this.grpbxAttack);
+            this.Controls.Add(this.grpBxStats);
+            this.Controls.Add(this.bttnLeft);
+            this.Controls.Add(this.bttnDown);
+            this.Controls.Add(this.bttnRight);
+            this.Controls.Add(this.bttnUp);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "frmUI";
+            this.Text = "Goblins and Heroes - The Game";
+            this.Load += new System.EventHandler(this.PlayerUI_Load);
+            this.grpBxStats.ResumeLayout(false);
+            this.grpbxAttack.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button bttnUp;
+        private System.Windows.Forms.Button bttnRight;
+        private System.Windows.Forms.Button bttnDown;
+        private System.Windows.Forms.Button bttnLeft;
+        private System.Windows.Forms.GroupBox grpBxStats;
+        private System.Windows.Forms.RichTextBox redStats;
+        private System.Windows.Forms.GroupBox grpbxAttack;
+        private System.Windows.Forms.Button bttnAttack;
+        private System.Windows.Forms.RichTextBox redLog;
+        private System.Windows.Forms.RichTextBox redEnemyStats;
+        private System.Windows.Forms.Label lblMap;
+        private System.Windows.Forms.ComboBox EnemycomboBox;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button1;
+    }
+}
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Task_1
+{
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmUI());
+
+        }
+    }
+}
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    class SwampCreature : Enemy
+    {
+
+        public SwampCreature(int x, int y, TileType tileType) : base(x, y, tileType, 'C',1 ,10, 10)
+        {
+
+        }
+
+        public override MovementDirection ReturnMove(MovementDirection move = MovementDirection.idle)
+        {
+            int randomTile = rnd.Next(0, Vision.Length);
+            while (Vision[randomTile].GetType() != typeof(EmptyTile))
+            {
+                randomTile = rnd.Next(0, Vision.Length);
+            }
+            switch (randomTile)
+            {
+                
+                case 0:
+                    return MovementDirection.up;                    //Get Creature to move randomly
+                case 1:
+                    return MovementDirection.down;
+                case 2:
+                    return MovementDirection.right;
+                case 3:
+                    return MovementDirection.left;
+                default:
+                    return MovementDirection.idle;
+            }
+        }
+    }
+}
+
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Task_1</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="PlayerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task 1", "Task 1.csproj", "{4DF839E7-3224-4BC7-9E34-9950048EF40A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE265CC1-99FE-43D9-B2FD-6E29B6828B16}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DF839E7-3224-4BC7-9E34-9950048EF40A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF839E7-3224-4BC7-9E34-9950048EF40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF839E7-3224-4BC7-9E34-9950048EF40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF839E7-3224-4BC7-9E34-9950048EF40A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C35F1428-39B6-44CE-B7AB-C72BB7AA2678}
+	EndGlobalSection
+EndGlobal
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    //Q2.1
+    abstract class Tile
+    {  
+        //Protected member variables
+        protected int X;
+        protected int Y;
+        protected char Symbol;
+        protected TileType TypeOfTile;
+
+        public enum TileType
+        {
+            Hero,
+            Enemy,
+            Gold,
+            Weapon,
+            Barrier,
+            Empty
+        }
+
+        public Tile(int x, int y,TileType tileType, char symbol)
+        {
+            X = x;
+            Y = y;
+            Symbol = symbol;
+            TypeOfTile = tileType;
+        }
+
+        public int getX
+        { 
+            get { return X; }
+            set { X = value; }
+        }
+       
+        public int getY 
+        { 
+            set { Y = value; } 
+            get { return Y; }
+        }
+        
+        public char getSymbol 
+        { 
+            set { Symbol = value; } 
+            get { return Symbol; } 
+        }
+
+        public TileType GetTileType
+        {
+            set { TypeOfTile = value; }
+            get { return TypeOfTile; }
+
+        }  
+    }
+}
+
+[*.cs]
+
+# IDE0055: Fix formatting
+dotnet_diagnostic.IDE0055.severity = none
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    //Q2.2
+     abstract class Character : Tile        //character class used to make enemies and character
+    {
+        //Protected member variables
+        protected int HP;
+        protected int MaxHP;
+        protected int Damage;
+        protected int Purse;
+        public Tile[] Vision = new Tile[4];
+
+        public Character(int x, int y, TileType tileType, char symbol, int hp, int maxhp, int damage, int purse) : base(x, y, tileType, symbol)
+        {
+            Symbol = symbol;
+            HP = hp;
+            MaxHP = maxhp;
+            Damage = damage;
+            Purse = purse;
+        }
+
+        public int getHP
+        {
+            get { return HP;}
+            set { HP = value; }
+        }
+
+        public int getmaxHP
+        {
+            get { return MaxHP; }
+            set { MaxHP = value; }
+        }
+
+        public int getDamage
+        {
+            get { return Damage; }
+            set { Damage = value; }
+        }
+
+        public int getPurse
+        {
+            get { return Purse; }
+            set { Purse = value; }
+
+        }
+
+        public void setPurse(int purse) {
+            this.Purse = purse;
+        }
+
+        public enum MovementDirection
+        {
+            idle,                       //no movement
+            up,
+            right,
+            down,
+            left
+        }
+
+        public virtual void attack(Character Target)
+        {
+            if(checkRange(Target))
+            {
+                Target.HP -= Damage;                //Decreases health of target
+            }
+            
+        }
+
+        public bool isdead()
+        {
+            if(HP <= 0)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public virtual bool checkRange(Character Target)
+        {
+            if (DistanceTo(Target) > 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public int DistanceTo(Character character)      //Figures out number of spaces for movement
+        {
+            int num = X + Y;
+            int num2 = character.X + character.Y;
+            int num3 = Math.Abs(num - num2);
+            return num3;
+        }
+
+        public void Move(MovementDirection move)
+        {
+            switch(move)
+            {
+                case MovementDirection.up:
+                    Y = Y - 1;
+                    break;
+                case MovementDirection.down:
+                    Y = Y + 1;
+                    break;
+                case MovementDirection.left:
+                    X = X - 1;
+                    break;
+                case MovementDirection.right:
+                    X = X + 1;
+                    break;
+                case MovementDirection.idle:
+                    break;
+            }
+        }
+
+        public void Pickup(Item i)
+        {
+            Gold gold = (Gold)i;
+            Purse = Purse + gold.GetAmount;
+        }
+
+        public abstract MovementDirection ReturnMove(MovementDirection m);
+
+        public abstract override string ToString();
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    //Q2.1
+    class EmptyTile : Tile          //exists to denote an empty tile
+    {
+        public EmptyTile(int x, int y, TileType tile_type) : base(x, y, tile_type,'.')
+        {
+
+        }
+    }
+}
+
+using System;                       //Ryan Kemp
+using System.Collections.Generic;   //20100423
+using System.Text;
+
+namespace Task_1
+{
+    abstract class Enemy : Character        //inherits from Character
+    {
+        protected Random rnd = new Random();
+
+        public  Enemy(int x, int y, TileType tileType, char symbol, int dmg, int EnemyHP, int MaxEnemyHP) : base(x, y, tileType, symbol, dmg, EnemyHP, MaxEnemyHP, 0)
+        {
+            Damage = dmg;
+            MaxHP = MaxEnemyHP;
+            HP = EnemyHP;
+        }
+
+        public override string ToString()
+        {
+            string output = GetType().Name+'\n'+ " at["+ X +","+ Y+"]  \n "+ HP+" HP \n"+"{"+ Damage+"}";
+            return output;
+        }
+    }
+}
+namespace Task_1
+{
+    internal class FileStream
+    {
+        private string v;
+        private object create;
+        private object write;
+        private object none;
+
+        public FileStream(string v, object create, object write, object none)
+        {
+            this.v = v;
+            this.create = create;
+            this.write = write;
+            this.none = none;
+        }
+    }
+}
